@@ -5,7 +5,7 @@ import location from '../../assets/location-icon.svg'
 import './style.css'
 
 const Contact = () => {
-    return <div className="contact">
+    return <div id='contact-us' className="contact">
         <div className="container">
             <h1 className='title'>
             تواصل معنا
