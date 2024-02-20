@@ -1,0 +1,90 @@
+.markets{
+    padding-top: 150px;
+}
+
+.markets .title{
+    text-align: center;
+    font-size: 65px;
+    font-weight: 700;
+    color: #1A1A1A;
+    position: relative;
+}
+
+.markets .title::before,
+.markets .title::after{
+    content: '';
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary);
+}
+.markets .title::before{
+    right: 24%
+}
+.markets .title::after{
+    left: 24%
+}
+.p-carousel-indicators{
+    display: none;
+}
+.market-card{
+    font-family: "Tajawal", sans-serif !important;
+    text-align: right;
+    direction: rtl;
+    border-radius: 16px;
+    transition: background .5s ease-out 100ms;
+    box-shadow: 0.8433734774589539px 12.650602340698242px 19.39759063720703px 0px #E5E5E540;
+}
+.market-card:hover{
+    background-color: var(--primary);
+}
+.market-card:hover .card-location,
+.market-card:hover .card-title,
+.market-card:hover .card-phone,
+.market-card:hover .hours{
+    color: #fff;
+}
+.market-card img{
+    border-radius: 16px;
+}
+.market-card .hours{
+    color: #767676;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+    /* padding-bottom: 16px!important; */
+    margin-bottom: 0;
+}
+.market-card .card-title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 17px;
+    /* margin-top: 16px!important; */
+}
+.market-card .card-location{
+    margin-bottom: 18px;
+}
+.market-card .card-phone{
+    margin-bottom: 0;
+}
+.market-card .card-location,
+.market-card .card-phone{
+    font-size: 18px;
+    font-weight: 700;
+    color: #767676;
+}
+.market-card .card-location img,
+.market-card .card-phone img{
+    margin-left: 8px;
+}
+.markets .more button{
+    background-color: #174B9F;
+    padding: 15px 48px 15px 48px;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}

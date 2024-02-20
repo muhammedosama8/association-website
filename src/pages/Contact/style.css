@@ -1,0 +1,109 @@
+.contact{
+    background-color: #FDFDFD;
+    padding-top: 140px;
+}
+.contact .card{
+    border: none;
+}
+.contact .info{
+    background-color: var(--primary);
+    width: 490px;
+    border-radius: 8px;
+    color: #fff;
+    padding: 40px;
+    position: relative;
+}
+.contact .info::after{
+    content: '';
+    width: 269px;
+    height: 269px;
+    background: #FFFFFF1F;
+    border-radius: 50%;
+    position: absolute;
+    left: -55px;
+    top: 464px;
+}
+.contact .info::before{
+    content: '';
+    width: 138px;
+    height: 138px;
+    background: #FFF9F921;
+    border-radius: 50%;
+    position: absolute;
+    left: 104px;
+    top: 438px;
+}
+.contact .info h3{
+    font-size: 24px;
+    font-weight: 700;
+    
+}
+.contact .info p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #ADADAD;
+}
+.contact .title{
+    font-size: 65px;
+    font-weight: 700;
+    color: #1A1A1A;
+    position: relative;
+    text-align: center;
+}
+
+.contact .title::before,
+.contact .title::after{
+    content: '';
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary);
+}
+.contact .title::before{
+    right: 29%
+}
+.contact .title::after{
+    left: 29%
+}
+
+.contact .contacts img{
+    margin-left: 8px;
+}
+.contact .contacts p{
+    color: #fff;
+    margin-bottom: 50px;
+}
+.contact .contacts{
+    margin-top: 114px;
+    margin-bottom: 225px;
+}
+.contact .form{
+    padding: 90px 50px 0 50px;
+}
+.contact .form label{
+    display: block;
+}
+.contact .form input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ADADAD
+}
+.contact .form .submit{
+    text-align: end;
+}
+.contact .form .submit button{
+    background-color: #174B9F;
+    padding: 15px 48px 15px 48px;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.contact .form input:focus-visible{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary)
+}

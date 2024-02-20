@@ -1,0 +1,42 @@
+.footer{
+    background: radial-gradient(50% 50% at 50% 50%, #2A5EB2 0%, #0E3C86 100%);
+    padding: 16px;
+    margin-top: 116px;
+}
+.apps,
+.social {
+    text-align: center;
+}
+.social p,
+.apps p{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+.apps .icons{
+    margin-bottom: 16px;
+}
+.apps a{
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+}
+.social .icons{
+    margin-top: 24px;
+}
+.social .icons a{ 
+    margin-left: 16px;
+}
+.footer hr{
+    color: #fff;
+    margin: 8px;
+}
+.footer .power{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 19.2px;
+    margin-top: 12px;
+}
