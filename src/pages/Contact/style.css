@@ -5,7 +5,7 @@
 .contact .card{
     border: none;
     /* o/pacity: 0; */
-    animation: fade 2s ease-in;
+    animation: fade 1s ease-in;
 }
 @keyframes fade {
     from {opacity: 0}
