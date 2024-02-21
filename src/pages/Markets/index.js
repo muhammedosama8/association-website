@@ -54,7 +54,7 @@ const Markets = () =>{
             <div className="market-card border-round p-3">
                 <div className='p-2'>
                     <div className="mb-3">
-                        <img src={product.img} alt={product.name} className="w-100 shadow-2" />
+                        <img src={product.img} alt={product?.title || 'market'} className="w-100 shadow-2" />
                     </div>
                     <div>
                         <p className="hours">

@@ -51,7 +51,7 @@ const News = () =>{
             <div className="new-card border-round p-3">
                 <div className='p-2'>
                     <div className="mb-3">
-                        <img src={product.img} alt={product.name} height='133' className="w-100 shadow-2" />
+                        <img src={product.img} alt={product?.title || 'news'} height='133' className="w-100 shadow-2" />
                     </div>
                     <div>
                         <p className="card-title">{product.title}</p>
