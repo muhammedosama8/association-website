@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 import header from '../../assets/header.jpeg';
 import './style.css'
 
@@ -28,7 +29,7 @@ function Header() {
             <Carousel.Caption>
               <h1>{item?.title || ''}</h1>
               <p>{item?.description || ''}</p>
-              <a href='#contact-us'>تواصل معنا</a>
+              <Link to='/contact-us'>تواصل معنا</Link>
             </Carousel.Caption>
           </Carousel.Item>
         })}

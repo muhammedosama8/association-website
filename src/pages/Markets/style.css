@@ -79,7 +79,7 @@
 .market-card .card-phone img{
     margin-left: 8px;
 }
-.markets .more button{
+.markets .more a{
     background-color: #174B9F;
     padding: 15px 48px 15px 48px;
     border: none;
@@ -87,4 +87,5 @@
     border-radius: 8px;
     font-size: 18px;
     font-weight: 500;
+    text-decoration: none;
 }

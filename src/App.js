@@ -18,6 +18,10 @@ import Activities from './pages/Activities';
 function App() {
   useEffect(()=>{
     AOS.init();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   },[])
 
   return (

@@ -6,6 +6,7 @@ import phone from '../../assets/phone.svg';
 import location from '../../assets/location.svg';
 import './style.css'
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Markets = () =>{
     const [data, setData] = useState([])
@@ -90,7 +91,7 @@ const Markets = () =>{
             itemTemplate={productTemplate}
         />
         <div className='more text-center'>
-            <Button>المزيد</Button>
+            <Link to='/markets'>المزيد</Link>
         </div>
     </div>
     </div>
