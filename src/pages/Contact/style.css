@@ -4,6 +4,12 @@
 }
 .contact .card{
     border: none;
+    /* o/pacity: 0; */
+    animation: fade 2s ease-in;
+}
+@keyframes fade {
+    from {opacity: 0}
+  to {opacity: 1}
 }
 .contact .info{
     background-color: var(--primary);
