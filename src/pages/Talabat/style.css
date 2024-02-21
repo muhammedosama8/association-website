@@ -1,0 +1,49 @@
+.talabat{
+    padding: 57px 0;
+    background: #174B9F;
+    margin-top: 122px;
+    position: relative;
+}
+.talabat::after{
+    content: '';
+    width: 269px;
+    height: 269px;
+    background: #FFFFFF1F;
+    border-radius: 50%;
+    position: absolute;
+    left: -167px;
+    top: 247.38px;
+}
+.talabat::before{
+    content: '';
+    width: 138px;
+    height: 138px;
+    background: #FFF9F921;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    top: 221.38px;
+}
+.talabat .talabat-img{
+    width: 364px;
+    height: 273px;
+    border-radius: 20px;
+}
+.talabat .title{
+    font-size: 65px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 78px;
+    padding: 0 46px;
+}
+.talabat .order-now{
+    padding: 0 80px;
+    text-align: end;
+}
+.talabat .order-now button{
+    background-color: #FF6F00;
+    padding: 15px 48px 15px 48px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+}

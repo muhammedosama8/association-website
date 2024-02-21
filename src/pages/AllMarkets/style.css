@@ -1,0 +1,74 @@
+.all-markets{
+    padding-top: 150px;
+    background-color: #FDFDFD;
+}
+
+.all-markets .title{
+    text-align: center;
+    font-size: 65px;
+    font-weight: 700;
+    color: #1A1A1A;
+    position: relative;
+}
+
+.all-markets .title::before,
+.all-markets .title::after{
+    content: '';
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary);
+}
+.all-markets .title::before{
+    right: 23%
+}
+.all-markets .title::after{
+    left: 23%
+}
+
+.all-markets .allmarket-card{
+    font-family: "Tajawal", sans-serif !important;
+    text-align: right;
+    direction: rtl;
+    border-radius: 16px;
+    box-shadow: 0px 0px 16px 0px #0000000F;
+    cursor: pointer;
+}
+
+.all-markets .new-card .card-description{
+    color: #ADADAD;
+    margin-bottom: 0;
+}
+.all-markets .allmarket-card img{
+    border-radius: 3px;
+}
+
+
+.allmarket-card .hours{
+    color: #767676;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 16px;
+    /* padding-bottom: 16px!important; */
+    margin-bottom: 0;
+}
+.allmarket-card .card-title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 17px;
+    /* margin-top: 16px!important; */
+}
+.allmarket-card .card-location{
+    margin-bottom: 18px;
+}
+.allmarket-card .card-phone{
+    margin-bottom: 0;
+}
+.allmarket-card .card-location,
+.allmarket-card .card-phone{
+    font-size: 18px;
+    font-weight: 700;
+    color: #767676;
+}

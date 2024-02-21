@@ -4,6 +4,7 @@ import Header from "../Header"
 import Management from "../Management"
 import Markets from "../Markets"
 import News from "../News"
+import Talabat from "../Talabat"
 
 const Home = () =>{
     return<>
@@ -12,6 +13,7 @@ const Home = () =>{
       <Markets />
       <Management />
       <News />
+      <Talabat />
       <Contact />
     </>
 }

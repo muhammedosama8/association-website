@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.svg'
 import './style.css'
 
@@ -8,21 +10,21 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
             <img src={logo} alt="Logo" height='60px' />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
-            <Nav.Link href="#home">
+            <NavLink to="/" className='nav-link'>
                 الرئيسية
-            </Nav.Link>
-            <Nav.Link href="#activities">
+            </NavLink>
+            <NavLink to="/activities" className='nav-link'>
                 الأنشطة والفاعليات
-            </Nav.Link>
-            <Nav.Link href="#markets">الفروع والأسواق</Nav.Link>
-            <Nav.Link href="#news">أخبار الجمعية</Nav.Link>
-            <Nav.Link href="#contact-us">اتصل بنا</Nav.Link>
+            </NavLink>
+            <NavLink to="/markets" className='nav-link'>الفروع والأسواق</NavLink>
+            <NavLink to="/news" className='nav-link'>أخبار الجمعية</NavLink>
+            <NavLink to="/contact-us" className='nav-link'>اتصل بنا</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

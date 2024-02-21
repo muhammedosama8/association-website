@@ -1,0 +1,31 @@
+.new{
+    padding-top: 234px;
+}
+.new .new-title{
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 78px;
+    text-align: right;
+}
+.new .writeBy{
+    color: #767676;
+    margin: 0;
+}
+.new .owner{
+    color: var(--primary);
+}
+.new .description{
+    color: #767676;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-top: 54px;
+    text-align: right;
+    width: 75%;
+}
+.new .img{
+    max-width: 1270px;
+    max-height: 831px;
+    border-radius: 16px;
+    margin-top: 60px;
+}

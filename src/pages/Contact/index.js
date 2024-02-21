@@ -13,7 +13,9 @@ const Contact = () => {
             <Card>
                 <CardBody>
                     <div className="d-flex">
-                        <div className="info">
+                        <div className="info" data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                             <h3>معلومات الاتصال</h3>
                             <p>قل شيئًا لبدء محادثة مباشرة!</p>
                             <div className="contacts">
@@ -31,7 +33,9 @@ const Contact = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="form">
+                        <div className="form" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                             <form>
                                 <Row>
                                     <Col md={6} className='p-3 mb-5'>

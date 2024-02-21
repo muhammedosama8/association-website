@@ -1,9 +1,9 @@
-.news{
+.all-news{
     padding-top: 150px;
     background-color: #FDFDFD;
 }
 
-.news .title{
+.all-news .title{
     text-align: center;
     font-size: 65px;
     font-weight: 700;
@@ -11,8 +11,8 @@
     position: relative;
 }
 
-.news .title::before,
-.news .title::after{
+.all-news .title::before,
+.all-news .title::after{
     content: '';
     width: 80px;
     position: absolute;
@@ -21,44 +21,38 @@
     border-radius: 2px;
     background-color: var(--primary);
 }
-.news .title::before{
+.all-news .title::before{
     right: 27%
 }
-.news .title::after{
+.all-news .title::after{
     left: 27%
 }
-.p-carousel-indicators{
-    display: none;
-}
-.news .p-carousel-next,
-.news .p-carousel-prev{
-    box-shadow: 0px 0px 16px 0px #0000000F;
-    border-radius: 50%;
-}
-.news .new-card{
+
+.all-news .new-card{
     font-family: "Tajawal", sans-serif !important;
     text-align: right;
     direction: rtl;
     border-radius: 16px;
     box-shadow: 0px 0px 16px 0px #0000000F;
+    cursor: pointer;
 }
 
-.news .new-card .card-description{
+.all-news .new-card .card-description{
     color: #ADADAD;
     margin-bottom: 0;
 }
-.news .new-card img{
+.all-news .new-card img{
     border-radius: 3px;
 }
 
-.news .new-card .card-title{
+.all-news .new-card .card-title{
     font-size: 16px;
     font-weight: 700;
     margin-top: 22px;
     margin-bottom: 22px;
     color: #1A1A1A;
 }
-.news .more a{
+.all-news .more a{
     background-color: #174B9F;
     padding: 15px 48px 15px 48px;
     border: none;

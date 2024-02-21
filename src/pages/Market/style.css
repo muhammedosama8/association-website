@@ -1,0 +1,24 @@
+.market{
+    padding-top: 234px;
+}
+.market .market-title{
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 78px;
+    text-align: right;
+}
+.market .location img,
+.market .phone img{
+    margin-left: 28px;
+}
+.market .location,
+.market .phone{
+    color: #767676;
+    font-size: 32px;
+}
+.market .img{
+    max-width: 1270px;
+    max-height: 831px;
+    border-radius: 16px;
+    margin-top: 60px;
+}
