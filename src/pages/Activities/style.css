@@ -2,6 +2,7 @@
     padding-top: 150px;
     text-align: center;
     background-color: #FDFDFD;
+    overflow: hidden;
 }
 .activities .title{
     font-size: 65px;
