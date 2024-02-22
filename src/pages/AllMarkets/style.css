@@ -66,6 +66,10 @@
 .allmarket-card .card-phone{
     margin-bottom: 0;
 }
+.allmarket-card .card-location img,
+.allmarket-card .card-phone img{
+    margin-left: 12px;
+}
 .allmarket-card .card-location,
 .allmarket-card .card-phone{
     font-size: 18px;

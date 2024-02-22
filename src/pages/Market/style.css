@@ -22,3 +22,22 @@
     border-radius: 16px;
     margin-top: 60px;
 }
+@media screen and (max-width: 500px){
+    .market{
+        padding-top: 134px;
+    }
+    .market .market-title{
+        font-size: 32px;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+    .market .location,
+    .market .phone{
+        color: #767676;
+        font-size: 20px;
+    }
+    .market .location img,
+    .market .phone img{
+        margin-left: 12px;
+    }
+}
