@@ -68,3 +68,27 @@
     font-weight: 500;
     text-decoration: none;
 }
+@media screen and (max-width: 500px){
+    .news{
+        padding-top: 70px;
+    }
+    .news .title{
+        font-size: 16px;
+    }
+    .news .title::before,
+    .news .title::after{
+        width: 70px;
+    }
+    .news .title::before{
+        right: 17%
+    }
+    .news .title::after{
+        left: 17%
+    }
+    .p-carousel{
+        margin-top: 10px!important;
+    }
+    .news .more a{
+        margin-top: 28px;
+    }
+}

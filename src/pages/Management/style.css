@@ -85,3 +85,25 @@
     font-weight: 400;
     margin-bottom: 0;
 }
+@media screen and (max-width: 500px){
+    .management{
+        padding-bottom: 30px;
+    }
+    .management .title{
+        font-size: 16px;
+    }
+    .management .title::before,
+    .management .title::after{
+        width: 65px;
+    }
+    .management .title::before{
+        right: 12%
+    }
+    .management .title::after{
+        left: 12%
+    }
+    .management::after,
+    .management::before{
+        content: none;
+    }
+}

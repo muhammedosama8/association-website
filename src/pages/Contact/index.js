@@ -12,8 +12,8 @@ const Contact = () => {
             </h1>
             <Card>
                 <CardBody>
-                    <div className="d-flex">
-                        <div className="info">
+                    <Row>
+                        <Col md={4} sm={12} className="info">
                             <h3>معلومات الاتصال</h3>
                             <p>قل شيئًا لبدء محادثة مباشرة!</p>
                             <div className="contacts">
@@ -30,8 +30,8 @@ const Contact = () => {
                                     132 شارع دارتموث بوسطن، ماساتشوستس 02156 الولايات المتحدة
                                 </p>
                             </div>
-                        </div>
-                        <div className="form">
+                        </Col>
+                        <Col md={8} sm={12} className="form">
                             <form>
                                 <Row>
                                     <Col md={6} className='p-3 mb-5'>
@@ -76,8 +76,8 @@ const Contact = () => {
                                     </button>
                                 </div>
                             </form>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                 </CardBody>
             </Card>
         </div>

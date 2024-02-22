@@ -44,3 +44,21 @@
     font-size: 20px;
     font-weight: 500;
 }
+@media screen and (max-width: 500px){
+    .activities .title{
+        font-size: 16px;
+    }
+    .activities .title::before,
+    .activities .title::after{
+        width: 65px;
+    }
+    .activities .title::before{
+        right: 12%
+    }
+    .activities .title::after{
+        left: 12%
+    }
+    .activities-card{
+        margin-top: 12px;
+    }
+}

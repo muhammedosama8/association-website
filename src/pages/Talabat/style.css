@@ -46,4 +46,26 @@
     color: #fff;
     border: none;
     border-radius: 8px;
+    font-weight: 700;
+}
+@media screen and (max-width: 500px){
+    .talabat img{
+        width: 100%!important;
+    }
+    .talabat .title{
+        font-size: 32px;
+        line-height: 38.6px;
+        margin-top: 37px;
+        text-align: center;
+    }
+    .talabat .order-now button{
+        background: none;
+        width: 100%;
+        border: 1px solid #fff;
+        margin-top: 37px;
+    }
+    .talabat::after,
+    .talabat::before{
+        content: none;
+    }
 }

@@ -89,3 +89,21 @@
     font-weight: 500;
     text-decoration: none;
 }
+@media screen and (max-width: 500px){
+    .markets {
+        padding-top: 70px;
+    }
+    .markets .title{
+        font-size: 16px;
+    }
+    .markets .title::before,
+    .markets .title::after{
+        width: 65px;
+    }
+    .markets .title::before{
+        right: 12%
+    }
+    .markets .title::after{
+        left: 12%
+    }
+}

@@ -6,12 +6,12 @@ const Talabat = () => {
     return <div className="talabat">
         <div className='container'>
             <Row>
-                <Col md={4} data-aos="fade-down"
+                <Col md={4} sm={12} data-aos="fade-down"
                     data-aos-easing="linear"
                     data-aos-duration="2000">
                     <img src={talabat} alt='talabat' className='talabat-img' />
                 </Col>
-                <Col md={8}>
+                <Col md={8} sm={12}>
                     <p className='title'>اطلب الحين منتجات جمعية صباح السالم من تطبيق طلبات</p>
                     <div  className='order-now'>
                         <button>اطلب الآن</button>

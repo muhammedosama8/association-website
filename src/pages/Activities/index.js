@@ -27,7 +27,7 @@ const Activities = () => {
         </h1>
         <Row className='activities-card'>
             {activity?.map((item, index)=>{
-                return <Col md={4} key={index} data-aos="flip-down">
+                return <Col md={4} sm={12} key={index} data-aos="flip-down">
                     <div className='activity-card'>
                         <img src={item?.logo} alt={item?.title} width='100' height='100' />
                         <h4>{item?.title}</h4>

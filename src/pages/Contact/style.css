@@ -13,7 +13,7 @@
 }
 .contact .info{
     background-color: var(--primary);
-    width: 490px;
+    /* width: 490px; */
     border-radius: 8px;
     color: #fff;
     padding: 40px;
@@ -112,4 +112,49 @@
     outline: none;
     border: none;
     border-bottom: 1px solid var(--primary)
+}
+@media screen and (max-width: 500px) {
+    .contact{
+        padding-top: 72px;
+    }
+    .contact .form .submit button{
+        width: 100%;
+    }
+    .contact .title{
+        font-size: 18px;
+    }
+    .contact .title::before{
+        right: 9%
+    }
+    .contact .title::after{
+        left: 9%
+    }
+    .contact .contacts{
+        margin-top: 36px;
+        margin-bottom: 90px;
+    }
+    .contact .contacts p{
+        margin-bottom: 18px;
+    }
+    .contact .info::after{
+        width: 50%;
+        height: 162px;
+        left: -55px;
+        top: 74%;
+    }
+    .contact .info::before{
+        width: 32%;
+        height: 119px;
+        left: 74px;
+        top: 260px;
+    }
+    .contact .form{
+        padding: 59px 12px 0 12px;
+    }
+    .contact .form label{
+        color: #ADADAD;
+    }
+    .contact .form .mb-5{
+        margin-bottom: 1.3rem!important;
+    }
 }

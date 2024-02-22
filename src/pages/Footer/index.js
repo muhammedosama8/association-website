@@ -12,11 +12,11 @@ const Footer = () => {
     return <div className="footer">
         <div className="container">
             <Row>
-                <Col md={4} sm={12}>
+                <Col md={4} sm={12} className="logo">
                     <img src={logo} alt='logo' />
                 </Col>
-                <Col md={4} sm={12}>
-                    <div className="social">
+                <Col md={4} sm={12} className="social">
+                    <div>
                         <p>تابعنا علي</p>
                         <div className="icons">
                             <a href=''>
@@ -34,8 +34,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </Col>
-                <Col md={4} sm={12}>
-                    <div className="apps">
+                <Col md={4} sm={12} className="apps">
+                    <div>
                         <p>التطبيقات الإلكترونية</p>
                         <div className="icons">
                             <a href=''>

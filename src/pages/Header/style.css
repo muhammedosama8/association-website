@@ -44,3 +44,32 @@
 .carousel-control-next{
     display: none;
 }
+@media screen and (max-width: 500px){
+    .carousel{
+        margin-top: 86px;
+    }
+    .carousel-indicators {
+        bottom: -18px;
+    }
+    .carousel-indicators button{
+        width: 10px !important;
+        height: 10px !important;
+        border-radius: 50% !important;
+        background-color: #fff !important;
+    }
+    .carousel-inner .carousel-item img{
+        height: 260px;
+    }
+    .carousel-caption h1{
+        font-size: 18px;
+    }
+    .carousel-caption p{
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 17.77px;
+    }
+    .carousel-caption a{
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
