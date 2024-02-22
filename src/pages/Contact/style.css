@@ -85,6 +85,9 @@
     margin-top: 114px;
     margin-bottom: 225px;
 }
+.contact .info{
+    overflow: hidden;
+}
 .contact .form{
     padding: 90px 50px 0 50px;
 }
