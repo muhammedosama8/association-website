@@ -3,6 +3,7 @@
     background: #174B9F;
     margin-top: 122px;
     position: relative;
+    overflow: hidden;
 }
 .talabat::after{
     content: '';
