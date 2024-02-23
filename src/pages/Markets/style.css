@@ -89,6 +89,44 @@
     font-weight: 500;
     text-decoration: none;
 }
+@media screen and (min-width: 500px) and (max-width: 800px){
+    .markets{
+        padding-top: 60px
+    }
+    .markets .title{
+        font-size: 40px;
+    }
+    .markets .title::before{
+        right: 10%
+    }
+    .markets .title::after{
+        left: 10%
+    }
+    .markets .p-carousel .p-carousel-item .m-4{
+        margin: 8px!important;
+    }
+    .market-card .hours {
+        font-size: 16px;
+    }
+    hr {
+        margin: 0.5rem 0
+    }
+    .market-card .card-title {
+        font-size: 22px;
+    }
+    .market-card .card-location, 
+    .market-card .card-phone {
+        font-size: 16px;
+    }
+    .market-card .card-location img, 
+    .market-card .card-phone img{
+        width: 30px;
+        height: 30px;
+    }
+    .markets .more{
+        margin-top: 22px;
+    }
+}
 @media screen and (max-width: 500px){
     .markets {
         padding-top: 70px;

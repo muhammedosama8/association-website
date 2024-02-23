@@ -35,7 +35,7 @@ const AllMarkets = () =>{
                 </h1>
                 <Row>
                     {data?.map((prod, index) => (
-                        <Col md={4} key={index} onClick={()=> navigate('/markets/market', {state: prod})}>
+                        <Col className="mb-3" md={4} key={index} onClick={()=> navigate('/markets/market', {state: prod})}>
                         <div className='m-4'>
                         <div className="allmarket-card border-round p-3">
                             <div className='p-2'>

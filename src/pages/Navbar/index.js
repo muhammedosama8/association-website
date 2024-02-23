@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.svg'
 import './style.css'
 
@@ -10,8 +9,10 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand>
+          <NavLink to="/">
             <img src={logo} alt="Logo" height='60px' />
+          </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

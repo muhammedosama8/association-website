@@ -6,10 +6,11 @@ import phone from '../../assets/phone.svg';
 import location from '../../assets/location.svg';
 import './style.css'
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Markets = () =>{
     const [data, setData] = useState([])
+    const navigate = useNavigate()
     const responsiveOptions = [
         {
             breakpoint: '1400px',
@@ -50,7 +51,7 @@ const Markets = () =>{
 
     const productTemplate = (product) => {
         return (
-            <div className='m-4'>
+            <div className='m-4 cursor-pointer' onClick={()=> navigate('/markets/market', {state: product})}>
             <div className="market-card border-round p-3">
                 <div className='p-2'>
                     <div className="mb-3">

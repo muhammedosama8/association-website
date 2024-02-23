@@ -6,10 +6,11 @@ import phone from '../../assets/phone.svg';
 import location from '../../assets/location.svg';
 import './style.css'
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const News = () =>{
     const [data, setData] = useState([])
+    const navigate = useNavigate()
     const responsiveOptions = [
         {
             breakpoint: '1400px',
@@ -34,6 +35,13 @@ const News = () =>{
     ];
 
     useEffect(()=>{
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+    },[])
+
+    useEffect(()=>{
         setData([
             {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
             {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
@@ -47,7 +55,7 @@ const News = () =>{
 
     const productTemplate = (product) => {
         return (
-            <div className='m-4'>
+            <div className='m-4 cursor-pointer' onClick={()=> navigate('/news/new', {state: product})}>
             <div className="new-card border-round p-3">
                 <div className='p-2'>
                     <div className="mb-3">

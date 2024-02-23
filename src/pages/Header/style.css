@@ -44,6 +44,20 @@
 .carousel-control-next{
     display: none;
 }
+@media screen and (min-width: 500px) and (max-width: 800px){
+    .carousel-caption{
+        width: 50%;
+    }
+    .carousel-caption h1{
+        font-size: 40px;
+        margin-bottom: 8px;
+    }
+    .carousel-caption p{
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 28px;
+    }
+}
 @media screen and (max-width: 500px){
     .carousel{
         margin-top: 86px;

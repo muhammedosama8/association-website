@@ -32,7 +32,7 @@ const AllNews = () =>{
                 </h1>
                 <Row>
                     {data?.map((prod, index) => (
-                        <Col md={4} key={index} onClick={()=> navigate('/news/new', {state: prod})}>
+                        <Col md={4} className='mb-3 cursor-pointer' key={index} onClick={()=> navigate('/news/new', {state: prod})}>
                         <div className='m-4'>
                         <div className="new-card border-round p-3">
                             <div className='p-2'>

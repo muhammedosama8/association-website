@@ -114,6 +114,54 @@
     border: none;
     border-bottom: 1px solid var(--primary)
 }
+@media screen and (min-width: 500px) and (max-width: 800px){
+    .contact{
+        padding-top: 70px;
+    }
+    .contact .title{
+        font-size: 40px;
+    }
+    .contact .title::before{
+        right: 19%
+    }
+    .contact .title::after{
+        left: 19%
+    }
+    .contact .info {
+        padding: 40px 20px;
+    }
+    .contact .info h3 {
+        font-size: 20px;
+    }
+    .contact .info p {
+        font-size: 16px;
+    }
+    .contact .contacts {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    .contact .contacts p {
+        margin-bottom: 18px;
+    }   
+    .contact .info::after {
+        width: 170px;
+        height: 170px;
+        left: -55px;
+        top: 422px;
+    }
+    .contact .info::before {
+        width: 100px;
+        height: 100px;
+        left: 55px;
+        top: 380px;
+    }
+    .contact .form {
+        padding: 60px 25px 0 10px;
+    }
+    .contact .mb-5 {
+        margin-bottom: 1rem!important;
+    }
+}
 @media screen and (max-width: 500px) {
     .contact{
         padding-top: 72px;

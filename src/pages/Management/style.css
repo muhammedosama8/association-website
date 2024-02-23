@@ -86,6 +86,35 @@
     font-weight: 400;
     margin-bottom: 0;
 }
+@media screen and (min-width: 500px) and (max-width: 800px){
+    .management{
+        padding-top: 60px
+    }
+    .management::after {
+        top: auto;
+        left: -80px;
+        bottom: -28%;
+    }
+    .management::before {
+        left: -80px;
+        top: 11%;
+    }
+    .management .title{
+        font-size: 40px;
+    }
+    .management .title::before{
+        right: 10%
+    }
+    .management .title::after{
+        left: 10%
+    }
+    .management .p-carousel .p-carousel-item .m-4{
+        margin: 8px!important;
+    }
+    .management .management-card img{
+        height: 100%!important;
+    }
+}
 @media screen and (max-width: 500px){
     .management{
         padding-bottom: 30px;

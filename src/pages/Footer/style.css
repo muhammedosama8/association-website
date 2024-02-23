@@ -40,6 +40,11 @@
     line-height: 19.2px;
     margin-top: 12px;
 }
+@media screen and (min-width: 500px) and (max-width: 800px){
+    .footer {
+        margin-top: 60px;
+    }
+}
 @media screen and (max-width: 500px) {
     .footer .logo{
         text-align: center;

@@ -1,5 +1,6 @@
 .new{
     padding-top: 234px;
+    padding-bottom: 100px;
 }
 .new .new-title{
     font-size: 65px;
@@ -28,4 +29,18 @@
     max-height: 831px;
     border-radius: 16px;
     margin-top: 60px;
+}
+@media screen and (max-width: 500px){
+    .new{
+        padding-top: 134px;
+    }
+    .new .new-title{
+        font-size: 32px;
+        line-height: 30px;
+        margin-bottom: 12px;
+    }
+    .new .description{
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
