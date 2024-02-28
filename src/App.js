@@ -14,6 +14,7 @@ import New from './pages/New';
 import AllMarkets from './pages/AllMarkets';
 import Market from './pages/Market';
 import Activities from './pages/Activities';
+import Offers from './pages/Offers';
 
 function App() {
   useEffect(()=>{
@@ -39,6 +40,7 @@ function App() {
           } />
           <Route path="/markets" element={<AllMarkets />}  />
           <Route path="/markets/market" element={<Market />}  />
+          <Route path="/offers" element={<Offers />}  />
           <Route path="/news" element={<AllNews />}  />
           <Route path="/news/new" element={<New />}  />
           <Route path="/contact-us" element={<Contact />}  />

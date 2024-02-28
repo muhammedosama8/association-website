@@ -24,6 +24,7 @@ function NavBar() {
                 الأنشطة والفاعليات
             </NavLink>
             <NavLink to="/markets" className='nav-link'>الفروع والأسواق</NavLink>
+            <NavLink to="/offers" className='nav-link'>عروض الجمعية</NavLink>
             <NavLink to="/news" className='nav-link'>أخبار الجمعية</NavLink>
             <NavLink to="/contact-us" className='nav-link'>اتصل بنا</NavLink>
           </Nav>

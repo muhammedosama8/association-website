@@ -1,0 +1,109 @@
+.offers{
+    padding-top: 150px;
+    background-color: #FDFDFD;
+}
+
+.offers .title{
+    text-align: center;
+    font-size: 65px;
+    font-weight: 700;
+    color: #1A1A1A;
+    position: relative;
+}
+
+.offers .title::before,
+.offers .title::after{
+    content: '';
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary);
+}
+.offers .title::before{
+    right: 23%
+}
+.offers .title::after{
+    left: 23%
+}
+
+.offers .new-card{
+    font-family: "Tajawal", sans-serif !important;
+    text-align: right;
+    direction: rtl;
+    border-radius: 16px;
+    box-shadow: 0px 0px 16px 0px #0000000F;
+    cursor: pointer;
+}
+
+.offers .new-card .card-description{
+    color: #ADADAD;
+    margin-bottom: 0;
+}
+.offers .new-card img{
+    border-radius: 3px;
+}
+
+.offers .new-card .card-title{
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    color: #1A1A1A;
+}
+.offers .more a{
+    background-color: #174B9F;
+    padding: 15px 48px 15px 48px;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+@media screen and (min-width: 500px) and (max-width: 800px){
+    .offers{
+        padding-top: 60px
+    }
+    .offers .title{
+        font-size: 40px;
+        margin-bottom: 32px;
+    }
+    .offers .title::before{
+        right: 10%
+    }
+    .offers .title::after{
+        left: 10%
+    }
+    .offers .p-2{
+        padding: 0!important;
+    }
+    .offers .m-4{
+        margin: 0!important;
+    }
+    .offers .new-card .hours {
+        font-size: 16px;
+    }
+    .offers .new-card .card-title {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 500px){
+    .offers{
+        padding-top: 70px;
+    }
+    .offers .title{
+        font-size: 24px;
+    }
+    .offers .title::before,
+    .offers .title::after{
+        width: 50px;
+    }
+    .offers .title::before{
+        right: 8%
+    }
+    .offers .title::after{
+        left: 8%
+    }
+}
