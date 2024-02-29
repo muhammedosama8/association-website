@@ -1,25 +1,25 @@
 import { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import logo from '../../assets/activity-logo.svg'
-import boat from '../../assets/boat.svg'
-import iland from '../../assets/iland.svg'
-import tickets from '../../assets/tickets.svg'
-import bar from '../../assets/bar.svg'
-import house from '../../assets/house.svg'
 import './style.css'
+import ActivitiesAndEventsService from '../../services/ActivitiesAndEventsService';
 
 const Activities = () => {
     const [activity, setActivity] = useState([])
+    const activitiesAndEventsService = new ActivitiesAndEventsService()
+    const limit = 6
+
     useEffect(()=>{
-        setActivity([
-            {logo: logo, title: 'الخيم الرمضانيه', description: 'خلافًا للاعتقاد الشائع، فإن إيبسوم ليس مجرد نص عشوائي. ,لها جذور في قطعة.'},
-            {logo: boat, title: 'رحلات بحريه', description: 'خلافًا للاعتقاد الشائع، فإن إيبسوم ليس مجرد نص عشوائي. ,لها جذور في قطعة.'},
-            {logo: iland, title: 'جزيرة فليكا', description: 'خلافًا للاعتقاد الشائع، فإن إيبسوم ليس مجرد نص عشوائي. ,لها جذور في قطعة.'},
-            {logo: tickets, title: 'تذاكر ترفيهية', description: 'خلافًا للاعتقاد الشائع، فإن إيبسوم ليس مجرد نص عشوائي. ,لها جذور في قطعة.'},
-            {logo: bar, title: 'اشتراكات صالات رياضية', description: 'خلافًا للاعتقاد الشائع، فإن إيبسوم ليس مجرد نص عشوائي. ,لها جذور في قطعة.'},
-            {logo: house, title: 'شاليهات', description: 'خلافًا للاعتقاد الشائع، فإن إيبسوم ليس مجرد نص عشوائي. ,لها جذور في قطعة.'},
-        ])
+        let obj ={
+            offset: 0,
+            limit
+        }
+        activitiesAndEventsService.getList(obj).then(res=>{
+            if(res?.status === 200){
+                setActivity(res?.data?.data?.data)
+            }
+        }).catch(e=> console.log(e))
     },[])
+
     return <div id='activities' className="activities">
         <div className='container'>
         <h1 className='title'>
@@ -29,7 +29,7 @@ const Activities = () => {
             {activity?.map((item, index)=>{
                 return <Col md={4} sm={12} key={index} data-aos="flip-down">
                     <div className='activity-card'>
-                        <img src={item?.logo} alt={item?.title} width='100' height='100' />
+                        <img src={item?.image} alt={item?.title} width='100' height='100' />
                         <h4>{item?.title}</h4>
                         <p>{item?.description}</p>
                     </div>

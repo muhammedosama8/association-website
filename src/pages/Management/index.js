@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 import header from '../../assets/user.jpeg';
 import './style.css'
 import { Button } from 'react-bootstrap';
+import BoardOfDirectorsService from '../../services/BoardOfDirectorsService';
 
 const Management = () =>{
     const [data, setData] = useState([])
+    const boardOfDirectorsService = new BoardOfDirectorsService()
     const responsiveOptions = [
         {
             breakpoint: '1400px',
@@ -30,15 +32,18 @@ const Management = () =>{
         }
     ];
 
+    const limit = 9
+
     useEffect(()=>{
-        setData([
-            {img: header, name: 'سلطان الأحمدي', jop: 'رئيس مجل الادارة'},
-            {img: header, name: 'سلطان الأحمدي', jop: 'رئيس مجل الادارة'},
-            {img: header, name: 'سلطان الأحمدي', jop: 'رئيس مجل الادارة'},
-            {img: header, name: 'سلطان الأحمدي', jop: 'رئيس مجل الادارة'},
-            {img: header, name: 'سلطان الأحمدي', jop: 'رئيس مجل الادارة'},
-            {img: header, name: 'سلطان الأحمدي', jop: 'رئيس مجل الادارة'},
-        ])
+        let obj ={
+            offset: 0,
+            limit
+        }
+        boardOfDirectorsService.getList(obj).then(res=>{
+            if(res?.status === 200){
+                setData(res?.data?.data?.data)
+            }
+        }).catch(e=> console.log(e))
     },[])
 
     const productTemplate = (product) => {
@@ -46,11 +51,11 @@ const Management = () =>{
             <div className='m-4'>
             <div className="management-card border-round p-3">
                     <div className="mb-3">
-                        <img src={product.img} alt='img' height='374' className="w-100 shadow-2" />
+                        <img src={product.image} alt='img' width='374' className="shadow-2" />
                     </div>
                     <div className='text-center text-white'>
                         <p className="card-name">{product.name}</p>
-                        <p className="card-jop">{product.jop}</p>
+                        <p className="card-jop">{product.job_title}</p>
                     </div>
             </div>
             </div>

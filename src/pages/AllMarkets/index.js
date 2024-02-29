@@ -8,24 +8,39 @@ import Pagination from "../../common/Pagination/Pagination";
 import Contact from "../Contact";
 import Talabat from "../Talabat";
 import './style.css'
+import BranchesAndMarketsService from "../../services/BranchesAndMarketsService";
 
 const AllMarkets = () =>{
     const [data, setData] = useState([])
     const navigate = useNavigate()
+    const branchesAndMarketsService = new BranchesAndMarketsService()
+    const limit = 12
+
     useEffect(()=>{
-        setData([
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 5, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 4, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 2, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 3, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 6, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 7, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 8, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 9, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 12, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 12, phone: '12333222'},
-        ])
+        let obj ={
+            offset: 0,
+            limit
+        }
+        branchesAndMarketsService.getList(obj).then(res=>{
+            if(res?.status === 200){
+                setData(res?.data?.data?.data)
+            }
+        }).catch(e=> console.log(e))
     },[])
+    // useEffect(()=>{
+    //     setData([
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 5, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 4, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 2, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 3, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 6, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 7, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 8, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 9, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 12, phone: '12333222'},
+    //         {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 12, phone: '12333222'},
+    //     ])
+    // },[])
 
     return <div style={{marginTop:'68px'}}>
             <div className="container">
@@ -40,18 +55,18 @@ const AllMarkets = () =>{
                         <div className="allmarket-card border-round p-3">
                             <div className='p-2'>
                                 <div className="mb-3">
-                                    <img src={prod.img} alt={prod.name} height='133' className="w-100 shadow-2" />
+                                    <img src={prod.image} alt={prod?.title} height='133' className="w-100 shadow-2" />
                                 </div>
                                 <div>
                                 <div>
                                     <p className="hours">
-                                    مواعيد العمل: {prod.hours} ساعة عمل
+                                    مواعيد العمل: {prod.work_time} {prod?.work_time > 10 ? "ساعة" : "ساعات"}
                                     </p>
                                     <hr />
                                     <p className="card-title">{prod.title}</p>
                                     <p className="card-location">
                                         <img src={location} alt='location' />
-                                        {prod.location}
+                                        {prod.address}
                                     </p>
                                     <p className="card-phone">
                                         <img src={phone} alt='phone' />
@@ -74,8 +89,6 @@ const AllMarkets = () =>{
                   setLoading={setLoading}
                 /> */}
             </div>
-                <Talabat />
-                <Contact />
             </div>
     </div>
 }

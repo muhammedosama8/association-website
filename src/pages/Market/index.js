@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Contact from "../Contact";
-import Talabat from "../Talabat";
 import phone from '../../assets/phone.svg';
 import loc from '../../assets/location.svg';
 import './style.css'
@@ -20,18 +18,15 @@ const Market = () => {
                 <h1 className="market-title">{data?.title}</h1>
                 <p className="location">
                     <img src={loc} alt='location' />
-                    {data?.location}
+                    {data?.address}
                 </p>
                 <p className="phone">
                     <img src={phone} alt='phone' />
                     {data?.phone}
                 </p>
-                <img src={data?.img} alt='market' className="img" width='100%' />
+                <img src={data?.image} alt='market' className="img" width='100%' />
             </div>
         </div>
-
-        <Talabat />
-        <Contact />
     </div>
 }
 export default Market;

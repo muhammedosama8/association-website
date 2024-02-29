@@ -7,14 +7,16 @@ import location from '../../assets/location.svg';
 import './style.css'
 import { Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import BranchesAndMarketsService from '../../services/BranchesAndMarketsService';
 
 const Markets = () =>{
     const [data, setData] = useState([])
     const navigate = useNavigate()
+    const branchesAndMarketsService = new BranchesAndMarketsService()
     const responsiveOptions = [
         {
             breakpoint: '1400px',
-            numVisible: 2,
+            numVisible: 4,
             numScroll: 1
         },
         {
@@ -33,20 +35,18 @@ const Markets = () =>{
             numScroll: 1
         }
     ];
+    const limit = 9
 
     useEffect(()=>{
-        setData([
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 5, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 4, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 2, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 3, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 6, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 7, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 8, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 9, phone: '12333222'},
-            {img: header, title: 'اسم السوق او الفرع', location: 'شارع الهوارى' , hours: 12, phone: '12333222'},
-            
-        ])
+        let obj ={
+            offset: 0,
+            limit
+        }
+        branchesAndMarketsService.getList(obj).then(res=>{
+            if(res?.status === 200){
+                setData(res?.data?.data?.data)
+            }
+        }).catch(e=> console.log(e))
     },[])
 
     const productTemplate = (product) => {
@@ -55,7 +55,12 @@ const Markets = () =>{
             <div className="market-card border-round p-3">
                 <div className='p-2'>
                     <div className="mb-3">
-                        <img src={product.img} alt={product?.title || 'market'} className="w-100 shadow-2" />
+                        <img 
+                            src={product.image} 
+                            alt={product?.title || 'market'} 
+                            className="shadow-2" //w-100 
+                            width='314'
+                        />
                     </div>
                     <div>
                         <p className="hours">
@@ -65,7 +70,7 @@ const Markets = () =>{
                         <p className="card-title">{product.title}</p>
                         <p className="card-location">
                             <img src={location} alt='location' />
-                            {product.location}
+                            {product.address}
                         </p>
                         <p className="card-phone">
                             <img src={phone} alt='phone' />

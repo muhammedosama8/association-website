@@ -33,6 +33,7 @@
 .activities-card .activity-card{
     text-align: right;
     padding: 24px;
+    height: 100%;
     border-radius: 16px;
     margin: 0 2rem;
     box-shadow: 0.8433734774589539px 12.650602340698242px 19.39759063720703px 0px #E5E5E540;
@@ -65,7 +66,7 @@
 }
 @media screen and (max-width: 500px){
     .activities{
-        padding-top: 50px;
+        padding-top: 120px;
     }
     .activities .title{
         font-size: 16px;

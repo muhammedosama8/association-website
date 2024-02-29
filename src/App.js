@@ -31,13 +31,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}  />
-          <Route path="/activities" element={
-            <>
-            <Activities />
-            <Talabat />
-            <Contact />
-            </>
-          } />
+          <Route path="/activities" element={<Activities />} />
           <Route path="/markets" element={<AllMarkets />}  />
           <Route path="/markets/market" element={<Market />}  />
           <Route path="/offers" element={<Offers />}  />
