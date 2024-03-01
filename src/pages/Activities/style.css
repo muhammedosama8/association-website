@@ -66,7 +66,7 @@
 }
 @media screen and (max-width: 500px){
     .activities{
-        padding-top: 120px;
+        padding: 120px 0 20px;
     }
     .activities .title{
         font-size: 16px;

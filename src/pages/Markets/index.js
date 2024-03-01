@@ -58,7 +58,7 @@ const Markets = () =>{
                         <img 
                             src={product.image} 
                             alt={product?.title || 'market'} 
-                            className="shadow-2" //w-100 
+                            className="market-img shadow-2" //w-100 
                             width='314'
                         />
                     </div>

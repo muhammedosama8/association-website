@@ -136,4 +136,7 @@
     .management::before{
         content: none;
     }
+    .management .management-card img{
+        width: 100%!important;
+    }
 }

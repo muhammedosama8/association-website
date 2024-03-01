@@ -144,4 +144,10 @@
     .markets .title::after{
         left: 12%
     }
+    .market-img{
+        width: 100% !important;
+    }
+    .markets .more{
+        margin-top: 42px;
+    }
 }

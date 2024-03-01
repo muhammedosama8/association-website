@@ -51,7 +51,7 @@ const Footer = () => {
             </Row>
             <hr />
             <div>
-                <p className="text-center mb-0 power">Powered by 
+                <p className="text-center mb-0 power">Powered By 
                 <a 
                     href='https://www.leapsolutionskw.com' 
                     target='_blank'
@@ -60,7 +60,7 @@ const Footer = () => {
                         textDecoration: 'none',
                         margin: '0 4px'
                     }}
-                >leap solutions kw</a>
+                >Leap solutions kw</a>
                 &copy; {new Date().getFullYear()}</p>
             </div>
         </div>
