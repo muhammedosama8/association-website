@@ -3,7 +3,7 @@ import { Carousel } from 'primereact/carousel';
 import { useEffect, useState } from 'react';
 import header from '../../assets/user.jpeg';
 import './style.css'
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import BoardOfDirectorsService from '../../services/BoardOfDirectorsService';
 
 const Management = () =>{
@@ -67,14 +67,29 @@ const Management = () =>{
         <h1 className='title'>
         مجلس الإدارة
         </h1>
-        <Carousel 
+        {data?.length > 3 && <Carousel 
             style={{marginTop: '38px' ,direction: 'ltr'}} 
             value={data} 
             numVisible={3} 
             numScroll={3} 
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
-        />
+        />}
+        {(!!data?.length && data?.length <= 3) && <Row>
+            {data?.map((item, index)=>{
+                return <Col md={4} key={index}>
+                    <div className="management-card border-round p-3">
+                        <div className="mb-3">
+                            <img src={item.image} alt='img' width='374' className="shadow-2" />
+                        </div>
+                        <div className='text-center text-white'>
+                            <p className="card-name">{item.name}</p>
+                            <p className="card-jop">{item.job_title}</p>
+                        </div>
+                    </div>
+                </Col>
+            })}
+        </Row>}
     </div>
     </div>
 }

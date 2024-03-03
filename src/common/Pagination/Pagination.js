@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Col, Row } from "react-bootstrap"
 import './style.css'
 
-const Pagination = ({setData, service,shouldUpdate,isDeleted, setHasData,setLoading, type, search,id})=>{
+const Pagination = ({setData, service,shouldUpdate, setHasData,setLoading, type, search,id})=>{
     const [totalPages, setTotalPages] = useState()
     const [page, setPage] = useState(1)
     const [pageShow, setPageShow] = useState(1)
@@ -12,7 +12,6 @@ const Pagination = ({setData, service,shouldUpdate,isDeleted, setHasData,setLoad
         let params = {
             offset: (page-1)*10,
             limit: 10,
-            isDeleted: isDeleted,
         }
         if(!!type) params['type'] = type
         if(!!search) params['search'] = search
@@ -20,10 +19,10 @@ const Pagination = ({setData, service,shouldUpdate,isDeleted, setHasData,setLoad
         if(id){
             service?.getList(id, {...params}).then(res=>{
                 if(res?.status === 200){
-                    setData([...res.data?.meta?.data]) 
-                    let total= Math.ceil(res.data?.meta?.totalLength / 10)
+                    setData([...res.data?.data?.data]) 
+                    let total= Math.ceil(res.data?.data?.totalItems / 10)
                     setTotalPages(total)
-                    if(res.data?.meta?.totalLength > 0){
+                    if(res.data?.data?.totalItems > 0){
                         setHasData(1)
                     } else {
                         setHasData(0)
@@ -34,10 +33,10 @@ const Pagination = ({setData, service,shouldUpdate,isDeleted, setHasData,setLoad
         } else{
             service?.getList({...params}).then(res=>{
                 if(res?.status === 200){
-                    setData([...res.data?.meta?.data]) 
-                    let total= Math.ceil(res.data?.meta?.totalLength / 10)
+                    setData([...res.data?.data?.data]) 
+                    let total= Math.ceil(res.data?.data?.totalItems / 10)
                     setTotalPages(total)
-                    if(res.data?.meta?.totalLength > 0){
+                    if(res.data?.data?.totalItems > 0){
                         setHasData(1)
                     } else {
                         setHasData(0)
@@ -48,11 +47,11 @@ const Pagination = ({setData, service,shouldUpdate,isDeleted, setHasData,setLoad
         }
         
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    },[page, isDeleted, shouldUpdate, search])
+    },[page, shouldUpdate, search])
 
     useEffect(()=>{
         setPage(1)
-    },[isDeleted, shouldUpdate])
+    },[shouldUpdate])
 
     if(totalPages > 1){
         return(

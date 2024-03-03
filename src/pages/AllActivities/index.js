@@ -2,26 +2,16 @@ import { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import './style.css'
 import ActivitiesAndEventsService from '../../services/ActivitiesAndEventsService';
-import { Link } from 'react-router-dom';
+import Pagination from '../../common/Pagination/Pagination';
 
-const Activities = () => {
+const AllActivities = () => {
     const [activity, setActivity] = useState([])
     const activitiesAndEventsService = new ActivitiesAndEventsService()
-    const limit = 6
+    const [hasData, setHasData] = useState()
+    const [shouldUpdate, setShouldUpdate] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-    useEffect(()=>{
-        let obj ={
-            offset: 0,
-            limit
-        }
-        activitiesAndEventsService.getList(obj).then(res=>{
-            if(res?.status === 200){
-                setActivity(res?.data?.data?.data)
-            }
-        }).catch(e=> console.log(e))
-    },[])
-
-    return <div id='activities' className="activities">
+    return <div id='allActivities' className="allActivities">
         <div className='container'>
         <h1 className='title'>
             الأنشطة والفاعليات
@@ -37,10 +27,14 @@ const Activities = () => {
                 </Col>
             })}
         </Row>
-        <div className='more text-center mt-5'>
-            <Link to='/activities' className='btn btn-primary'>المزيد</Link>
-        </div>
+        <Pagination
+            setData={setActivity}
+            service={activitiesAndEventsService}
+            shouldUpdate={shouldUpdate}
+            setHasData={setHasData}
+            setLoading={setLoading}
+        />
         </div>
     </div>
 }
-export default Activities;
+export default AllActivities;

@@ -3,27 +3,28 @@ import { Button } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 import header from '../../assets/header.jpeg';
+import BannerService from '../../services/BannerService';
 import './style.css'
 
 function Header() {
     const [data, setData] = useState([])
+    const bannerService = new BannerService()
 
     useEffect(()=>{
-        setData([
-            {img: header, title: 'جمعية صباح السالم التعاونية1', description: 'طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو ' },
-            {img: header, title: '2جمعية صباح السالم التعاونية', description: 'طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو ' },
-            {img: header, title: '3جمعية صباح السالم التعاونية', description: 'طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو ' },
-            {img: header},
-        ])
+      bannerService?.getList().then(res=>{
+        if(res?.status === 200){
+          setData(res?.data?.data)
+        }
+      })
     },[])
 
   return (
     <Carousel data-bs-theme="dark" controls='false' id='home'>
-        {data?.map((item,index)=>{
-            return <Carousel.Item>
+        {data?.map((item, index)=>{
+            return <Carousel.Item key={index}>
             <img
               className="d-block w-100"
-              src={item?.img}
+              src={item?.image}
               alt="First slide"
             />
             <Carousel.Caption>

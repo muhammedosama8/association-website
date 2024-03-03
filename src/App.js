@@ -13,8 +13,8 @@ import AllNews from './pages/AllNews';
 import New from './pages/New';
 import AllMarkets from './pages/AllMarkets';
 import Market from './pages/Market';
-import Activities from './pages/Activities';
 import Offers from './pages/Offers';
+import AllActivities from './pages/AllActivities';
 
 function App() {
   useEffect(()=>{
@@ -31,7 +31,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}  />
-          <Route path="/activities" element={<Activities />} />
+          <Route path="/activities" element={<AllActivities />} />
           <Route path="/markets" element={<AllMarkets />}  />
           <Route path="/markets/market" element={<Market />}  />
           <Route path="/offers" element={<Offers />}  />

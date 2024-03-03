@@ -5,12 +5,15 @@ import header from '../../assets/header.jpeg';
 import phone from '../../assets/phone.svg';
 import location from '../../assets/location.svg';
 import './style.css'
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import NewsService from '../../services/NewsService';
 
 const News = () =>{
     const [data, setData] = useState([])
     const navigate = useNavigate()
+    const newsService = new NewsService()
+    const limit = 9
     const responsiveOptions = [
         {
             breakpoint: '1400px',
@@ -42,15 +45,15 @@ const News = () =>{
     },[])
 
     useEffect(()=>{
-        setData([
-            {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
-            {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
-            {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
-            {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
-            {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
-            {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
-            {img: header, title: 'تهنئة بتجديد الثقه لمعالي وزير الشؤن الاجتماعيه', description: ' طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط دون الاعتماد على محتوى ذي'},
-        ])
+        let obj ={
+            offset: 0,
+            limit
+        }
+        newsService.getList(obj).then(res=>{
+            if(res?.status === 200){
+                setData(res?.data?.data?.data)
+            }
+        }).catch(e=> console.log(e))
     },[])
 
     const productTemplate = (product) => {
@@ -59,7 +62,7 @@ const News = () =>{
             <div className="new-card border-round p-3">
                 <div className='p-2'>
                     <div className="mb-3">
-                        <img src={product.img} alt={product?.title || 'news'} height='133' className="w-100 shadow-2" />
+                        <img src={product.image} alt={product?.title || 'news'} height='133' className="w-100 shadow-2" />
                     </div>
                     <div>
                         <p className="card-title">{product.title}</p>
@@ -76,15 +79,34 @@ const News = () =>{
         <h1 className='title'>
         أخبار الجمعية
         </h1>
-        <Carousel 
+        {data?.length > 3 && <Carousel 
             style={{marginTop: '38px' ,direction: 'ltr'}} 
             value={data} 
             numVisible={3} 
             numScroll={3} 
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
-        />
-        <div className='more text-center'>
+        />}
+        {(!!data?.length && data?.length <= 3) && <Row>
+            {data?.map((item, index)=>{
+                return <Col md={4} key={index}>
+                    <div className='cursor-pointer' onClick={()=> navigate('/news/new', {state: item})}>
+                    <div className="new-card border-round p-3">
+                        <div className='p-2'>
+                            <div className="mb-3">
+                                <img src={item.image} alt={item?.title || 'news'} height='133' className="w-100 shadow-2" />
+                            </div>
+                            <div>
+                                <p className="card-title">{item.title}</p>
+                                <p className="card-description">{item.description}</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                </Col>
+            })}
+        </Row>}
+        <div className='more text-center mt-5'>
             <Link to='/news'>المزيد</Link>
         </div>
     </div>

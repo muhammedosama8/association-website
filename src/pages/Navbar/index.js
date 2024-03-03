@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,8 +7,9 @@ import logo from '../../assets/logo.svg'
 import './style.css'
 
 function NavBar() {
+  const [expanded, setExpanded] = useState(false);
   return (
-    <Navbar collapseOnSelect expand="lg" fixed="top">
+    <Navbar collapseOnSelect expand="lg" fixed="top" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand>
           <NavLink to="/">

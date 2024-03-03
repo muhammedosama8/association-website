@@ -5,7 +5,7 @@ import header from '../../assets/header.jpeg';
 import phone from '../../assets/phone.svg';
 import location from '../../assets/location.svg';
 import './style.css'
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import BranchesAndMarketsService from '../../services/BranchesAndMarketsService';
 
@@ -54,7 +54,7 @@ const Markets = () =>{
             <div className='m-4 cursor-pointer' onClick={()=> navigate('/markets/market', {state: product})}>
             <div className="market-card border-round p-3">
                 <div className='p-2'>
-                    <div className="mb-3">
+                    <div className="mb-3 text-center">
                         <img 
                             src={product.image} 
                             alt={product?.title || 'market'} 
@@ -88,15 +88,50 @@ const Markets = () =>{
         <h1 className='title'>
         الفروع والأسواق 
         </h1>
-        <Carousel 
+        {data?.length > 3 && <Carousel 
             style={{marginTop: '38px' ,direction: 'ltr'}} 
             value={data} 
             numVisible={3} 
             numScroll={3} 
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
-        />
-        <div className='more text-center'>
+        />}
+        {(!!data?.length && data?.length <= 3) && <Row className='mt-5'>
+            {data?.map((item, index)=>{
+                return <Col md={4} key={index}>
+                    <div className='cursor-pointer' onClick={()=> navigate('/markets/market', {state: item})}>
+                        <div className="market-card border-round p-3">
+                            <div className='p-2'>
+                                <div className="mb-3 text-center">
+                                    <img 
+                                        src={item.image} 
+                                        alt={item?.title || 'market'} 
+                                        className="market-img shadow-2" //w-100 
+                                        width='314'
+                                    />
+                                </div>
+                                <div>
+                                    <p className="hours">
+                                    مواعيد العمل: {item.hours} ساعة عمل
+                                    </p>
+                                    <hr />
+                                    <p className="card-title">{item.title}</p>
+                                    <p className="card-location">
+                                        <img src={location} alt='location' />
+                                        {item.address}
+                                    </p>
+                                    <p className="card-phone">
+                                        <img src={phone} alt='phone' />
+                                        {item.phone}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Col>
+            })}
+        </Row>}
+        <div className='more text-center mt-5'>
             <Link to='/markets'>المزيد</Link>
         </div>
     </div>

@@ -1,18 +1,18 @@
-.activities{
-    padding: 150px 0 60px;
+.allActivities{
+    padding: 150px 0;
     text-align: center;
     background-color: #FDFDFD;
     overflow: hidden;
 }
-.activities .title{
+.allActivities .title{
     font-size: 65px;
     font-weight: 700;
     color: #1A1A1A;
     position: relative;
 }
 
-.activities .title::before,
-.activities .title::after{
+.allActivities .title::before,
+.allActivities .title::after{
     content: '';
     width: 80px;
     position: absolute;
@@ -21,10 +21,10 @@
     border-radius: 2px;
     background-color: var(--primary);
 }
-.activities .title::before{
+.allActivities .title::before{
     right: 20%
 }
-.activities .title::after{
+.allActivities .title::after{
     left: 20%
 }
 .activities-card{
@@ -46,17 +46,27 @@
     font-size: 20px;
     font-weight: 500;
 }
+.allActivities .more a{
+    background-color: #174B9F;
+    padding: 15px 48px 15px 48px;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
 @media screen and (min-width: 500px) and (max-width: 800px){
-    .activities{
+    .allActivities{
         padding: 150px 0 80px;
     }
-    .activities .title{
+    .allActivities .title{
         font-size: 40px;
     }
-    .activities .title::before{
+    .allActivities .title::before{
         right: 10%
     }
-    .activities .title::after{
+    .allActivities .title::after{
         left: 10%
     }
     .activities-card .activity-card,
@@ -65,20 +75,20 @@
     }
 }
 @media screen and (max-width: 500px){
-    .activities{
+    .allActivities{
         padding: 120px 0 20px;
     }
-    .activities .title{
+    .allActivities .title{
         font-size: 16px;
     }
-    .activities .title::before,
-    .activities .title::after{
+    .allActivities .title::before,
+    .allActivities .title::after{
         width: 65px;
     }
-    .activities .title::before{
+    .allActivities .title::before{
         right: 12%
     }
-    .activities .title::after{
+    .allActivities .title::after{
         left: 12%
     }
     .activities-card{

@@ -36,7 +36,6 @@
     box-shadow: 0px 0px 16px 0px #0000000F;
     cursor: pointer;
 }
-
 .all-markets .new-card .card-description{
     color: #ADADAD;
     margin-bottom: 0;
@@ -75,6 +74,15 @@
     font-size: 18px;
     font-weight: 700;
     color: #767676;
+}
+.allmarket-card:hover .card-location,
+.allmarket-card:hover .hours,
+.allmarket-card:hover .card-phone{
+    color: #fff;
+}
+.all-markets .allmarket-card:hover{
+    background-color: var(--primary);
+    color: #fff!important;
 }
 @media screen and (min-width: 500px) and (max-width: 800px){
     .all-markets{
