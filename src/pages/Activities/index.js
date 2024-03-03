@@ -38,7 +38,7 @@ const Activities = () => {
             })}
         </Row>
         <div className='more text-center mt-5'>
-            <Link to='/activities' className='btn btn-primary'>المزيد</Link>
+            <Link to='/activities'>المزيد</Link>
         </div>
         </div>
     </div>

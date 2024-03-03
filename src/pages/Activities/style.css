@@ -46,6 +46,16 @@
     font-size: 20px;
     font-weight: 500;
 }
+.more a{
+    background-color: #174B9F;
+    padding: 15px 48px 15px 48px;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
 @media screen and (min-width: 500px) and (max-width: 800px){
     .activities{
         padding: 150px 0 80px;
