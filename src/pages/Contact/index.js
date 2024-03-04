@@ -60,8 +60,7 @@ const Contact = () => {
                                 </p>}
                                 {socialData?.address && <p className="mb-0">
                                     <img src={location} alt='location' />
-                                    132 شارع دارتموث بوسطن، ماساتشوستس 02156 الولايات المتحدة
-                                </p>}
+                                    {socialData?.address}                                </p>}
                             </div>
                         </Col>
                         <Col md={8} sm={12} className="form">

@@ -1,0 +1,29 @@
+.privacy{
+    padding-top: 150px;
+    background-color: #FDFDFD;
+}
+
+.privacy .title{
+    text-align: center;
+    font-size: 65px;
+    font-weight: 700;
+    color: #1A1A1A;
+    position: relative;
+}
+
+.privacy .title::before,
+.privacy .title::after{
+    content: '';
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary);
+}
+.privacy .title::before{
+    right: 19%
+}
+.privacy .title::after{
+    left: 19%
+}

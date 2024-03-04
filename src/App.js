@@ -55,8 +55,8 @@ function App() {
           <Route path="/privacy" element={<Privacy />}  />
           <Route path="*" element={<Error404 />}  />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

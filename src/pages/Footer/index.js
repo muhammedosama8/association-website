@@ -9,6 +9,7 @@ import app1 from '../../assets/app.png'
 import google1 from '../../assets/google.png'
 import './style.css'
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     const data = useSelector(state=> state?.social)
@@ -49,7 +50,7 @@ const Footer = () => {
                                 <img src={google1} alt='google-store' />
                             </a>
                         </div>
-                        <a href=''>سياسة الخصوصية</a>
+                        <Link to='/privacy'>سياسة الخصوصية</Link>
                     </div>
                 </Col>
             </Row>
