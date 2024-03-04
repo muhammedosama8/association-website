@@ -7,7 +7,8 @@ import Footer from './pages/Footer';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Talabat from './pages/Talabat';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Contact from './pages/Contact';
 import AllNews from './pages/AllNews';
 import New from './pages/New';
@@ -15,18 +16,31 @@ import AllMarkets from './pages/AllMarkets';
 import Market from './pages/Market';
 import Offers from './pages/Offers';
 import AllActivities from './pages/AllActivities';
+import Error404 from './common/Error404';
+import { useDispatch } from 'react-redux';
+import SocialService from './services/SocialService';
+import { setSocial } from './store/actions/SocialActions';
+import Privacy from './pages/Privacy';
 
 function App() {
+  const dispatch = useDispatch()
+  const socialService = new SocialService()
   useEffect(()=>{
     AOS.init();
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+
+    socialService.getList().then(res=>{
+      let data = res.data.data
+      dispatch(setSocial(data))
+    })
   },[])
 
   return (
     <div className="App">
+      <ToastContainer />
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -38,6 +52,8 @@ function App() {
           <Route path="/news" element={<AllNews />}  />
           <Route path="/news/new" element={<New />}  />
           <Route path="/contact-us" element={<Contact />}  />
+          <Route path="/privacy" element={<Privacy />}  />
+          <Route path="*" element={<Error404 />}  />
         </Routes>
       </BrowserRouter>
       <Footer />

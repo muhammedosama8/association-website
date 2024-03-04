@@ -164,7 +164,7 @@
 }
 @media screen and (max-width: 500px) {
     .contact{
-        padding-top: 72px;
+        padding: 120px 0 0;
     }
     .contact .form .submit button{
         width: 100%;

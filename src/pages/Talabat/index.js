@@ -1,8 +1,10 @@
 import { Col, Row } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import talabat from '../../assets/talabat.png'
 import './style.css'
 
 const Talabat = () => {
+    const socialData = useSelector(state=> state?.social)
     return <div className="talabat">
         <div className='container'>
             <Row>
@@ -14,7 +16,7 @@ const Talabat = () => {
                 <Col md={8} sm={12}>
                     <p className='title'>اطلب الحين منتجات جمعية صباح السالم من تطبيق طلبات</p>
                     <div  className='order-now'>
-                        <button>اطلب الآن</button>
+                        <a href={socialData?.talabat} target='_blank'>اطلب الآن</a>
                     </div>
                 </Col>
             </Row>

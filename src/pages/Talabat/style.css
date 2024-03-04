@@ -40,9 +40,10 @@
     padding: 0 80px;
     text-align: end;
 }
-.talabat .order-now button{
+.talabat .order-now a{
     background-color: #FF6F00;
-    padding: 15px 48px 15px 48px;
+    text-decoration: none;
+    padding: 18px 48px;
     color: #fff;
     border: none;
     border-radius: 8px;

@@ -16,12 +16,14 @@
 }
 .apps .icons{
     margin-bottom: 16px;
+    margin-top: 8px;
 }
 .apps a{
     font-size: 14px;
     font-weight: 500;
     color: #fff;
     text-decoration: none;
+    margin-right: 12px;
 }
 .social .icons{
     margin-top: 24px;

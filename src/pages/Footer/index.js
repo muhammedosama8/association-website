@@ -5,10 +5,14 @@ import x from '../../assets/x.svg'
 import instagram from '../../assets/instagram.svg'
 import youtube from '../../assets/youtube.svg'
 import app from '../../assets/app-store.svg'
-import google from '../../assets/google-store.svg'
+import app1 from '../../assets/app.png'
+import google1 from '../../assets/google.png'
 import './style.css'
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+    const data = useSelector(state=> state?.social)
+
     return <div className="footer">
         <div className="container">
             <Row>
@@ -19,16 +23,16 @@ const Footer = () => {
                     <div>
                         <p>تابعنا علي</p>
                         <div className="icons">
-                            <a href=''>
+                            <a href={data?.facebook} target='_blank'>
                                 <img src={facebook} alt='facebook' />
                             </a>
-                            <a href=''>
+                            <a href={data?.instagram} target='_blank'>
                                 <img src={instagram} alt='instagram' />
                             </a>
-                            <a href=''>
+                            <a href={data.twitter} target='_blank'>
                                 <img src={x} alt='x' />
                             </a>
-                            <a href=''>
+                            <a href={data?.you_tube} target='_blank'>
                                 <img src={youtube} alt='youtube' />
                             </a>
                         </div>
@@ -38,11 +42,11 @@ const Footer = () => {
                     <div>
                         <p>التطبيقات الإلكترونية</p>
                         <div className="icons">
-                            <a href=''>
-                                <img src={app} alt='app-store' />
+                            <a href={data?.app_store} target='_blank'>
+                                <img src={app1} alt='app-store' />
                             </a>
-                            <a href=''>
-                                <img src={google} alt='google-store' />
+                            <a href={data?.play_store} target='_blank'>
+                                <img src={google1} alt='google-store' />
                             </a>
                         </div>
                         <a href=''>سياسة الخصوصية</a>

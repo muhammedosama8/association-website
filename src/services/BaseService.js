@@ -13,6 +13,8 @@ export default class BaseService {
     } else {
       return http.get(this.apiEndpoint);
     }
-    
+  }
+  create(data) {
+    return http.post(this.apiEndpoint, data);
   }
 }
