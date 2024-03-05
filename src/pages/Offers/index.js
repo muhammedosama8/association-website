@@ -2,11 +2,14 @@ import { useState } from "react"
 import { Col, Row } from "react-bootstrap";
 import Pagination from "../../common/Pagination/Pagination";
 import OfferService from "../../services/OfferService";
+import Offer from "./Offer";
 import './style.css'
 
 const Offers = () =>{
     const [data, setData] = useState([])
     const [hasData, setHasData] = useState()
+    const [image, setImage] = useState('')
+    const [modal, setModal] = useState(false)
     const [shouldUpdate, setShouldUpdate] = useState(false)
     const [loading, setLoading] = useState(false)
     const offerService = new OfferService()
@@ -28,13 +31,15 @@ const Offers = () =>{
                                 <div>
                                     <p className="card-title">{prod.title}</p>
                                     <div className="text-center">
-                                        <a 
-                                            href={prod?.image} 
-                                            target="_blank"
+                                        <button
+                                            onClick={()=> {
+                                                setModal(true)
+                                                setImage(prod?.image)
+                                            }}
                                             className="btn btn-primary"
                                         >
                                             اظهار العرض
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -52,6 +57,13 @@ const Offers = () =>{
                 />
             </div>
             </div>
+            {modal && (
+                <Offer
+                image={image}
+                addModal={modal}
+                setAddModal={() => setModal(false)}
+                />
+            )}
     </div>
 }
 export default Offers
