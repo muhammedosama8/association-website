@@ -15,7 +15,7 @@ const Privacy = () =>{
         })
     },[])
 
-    return <div>
+    return <div style={{minHeight: '60vh'}}>
         <div className="container">
             <div className="privacy">
                 <h1 className='title mb-4'>
