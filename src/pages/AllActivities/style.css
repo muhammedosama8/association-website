@@ -3,6 +3,7 @@
     text-align: center;
     background-color: #FDFDFD;
     overflow: hidden;
+    min-height: 75vh;
 }
 .allActivities .title{
     font-size: 65px;

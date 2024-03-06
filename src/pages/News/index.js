@@ -79,7 +79,7 @@ const News = () =>{
         <h1 className='title'>
         أخبار الجمعية
         </h1>
-        {data?.length > 3 && <Carousel 
+        {data?.length > 1 && <Carousel 
             style={{marginTop: '38px' ,direction: 'ltr'}} 
             value={data} 
             numVisible={3} 
@@ -87,7 +87,7 @@ const News = () =>{
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
         />}
-        {(!!data?.length && data?.length <= 3) && <Row>
+        {(!!data?.length && data?.length == 1) && <Row>
             {data?.map((item, index)=>{
                 return <Col md={4} key={index}>
                     <div className='cursor-pointer' onClick={()=> navigate('/news/new', {state: item})}>

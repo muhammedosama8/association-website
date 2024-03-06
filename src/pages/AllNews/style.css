@@ -1,6 +1,7 @@
 .all-news{
     padding-top: 150px;
     background-color: #FDFDFD;
+    min-height: 75vh;
 }
 
 .all-news .title{

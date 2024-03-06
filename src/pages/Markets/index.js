@@ -88,7 +88,7 @@ const Markets = () =>{
         <h1 className='title'>
         الفروع والأسواق 
         </h1>
-        {data?.length > 3 && <Carousel 
+        {data?.length > 1 && <Carousel 
             style={{marginTop: '38px' ,direction: 'ltr'}} 
             value={data} 
             numVisible={3} 
@@ -96,7 +96,7 @@ const Markets = () =>{
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
         />}
-        {(!!data?.length && data?.length <= 3) && <Row className='mt-5'>
+        {(!!data?.length && data?.length == 1) && <Row className='mt-5'>
             {data?.map((item, index)=>{
                 return <Col md={4} key={index}>
                     <div className='cursor-pointer' onClick={()=> navigate('/markets/market', {state: item})}>

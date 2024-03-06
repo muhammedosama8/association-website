@@ -1,6 +1,7 @@
 .contact{
     background-color: #FDFDFD;
     padding-top: 140px;
+    min-height: 75vh;
 }
 .contact .card{
     border: none;
@@ -69,10 +70,10 @@
     background-color: var(--primary);
 }
 .contact .title::before{
-    right: 29%
+    right: 24%
 }
 .contact .title::after{
-    left: 29%
+    left: 24%
 }
 
 .contact .contacts img{
@@ -116,7 +117,7 @@
 }
 @media screen and (min-width: 500px) and (max-width: 800px){
     .contact{
-        padding-top: 70px;
+        padding-top: 120px;
     }
     .contact .title{
         font-size: 40px;

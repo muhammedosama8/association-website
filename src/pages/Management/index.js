@@ -67,7 +67,7 @@ const Management = () =>{
         <h1 className='title'>
         مجلس الإدارة
         </h1>
-        {data?.length > 3 && <Carousel 
+        {data?.length > 1 && <Carousel 
             style={{marginTop: '38px' ,direction: 'ltr'}} 
             value={data} 
             numVisible={3} 
@@ -75,7 +75,7 @@ const Management = () =>{
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
         />}
-        {(!!data?.length && data?.length <= 3) && <Row>
+        {(!!data?.length && data?.length == 1) && <Row>
             {data?.map((item, index)=>{
                 return <Col md={4} key={index}>
                     <div className="management-card border-round p-3">
