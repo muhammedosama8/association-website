@@ -1,7 +1,7 @@
 
 import { Carousel } from 'primereact/carousel';
 import { useEffect, useState } from 'react';
-import header from '../../assets/header.jpeg';
+import map from '../../assets/map.svg';
 import phone from '../../assets/phone.svg';
 import location from '../../assets/location.svg';
 import './style.css'
@@ -72,9 +72,15 @@ const Markets = () =>{
                             <img src={location} alt='location' />
                             {product.address}
                         </p>
-                        <p className="card-phone">
+                        <p className="card-phone mb-3">
                             <img src={phone} alt='phone' />
                             {product.phone}
+                        </p>
+                        <p >
+                            <a href={product.address_link} target='_blank' className='card-phone' style={{textDecoration: 'none'}}>
+                                <img src={map} alt='phone' width={40} style={{borderRadius: '50%'}} />
+                                اذهب إلي الموقع
+                            </a>
                         </p>
                     </div>
                 </div>

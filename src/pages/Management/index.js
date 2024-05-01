@@ -12,7 +12,7 @@ const Management = () =>{
     const responsiveOptions = [
         {
             breakpoint: '1400px',
-            numVisible: 2,
+            numVisible: 3,
             numScroll: 1
         },
         {
@@ -71,7 +71,7 @@ const Management = () =>{
             style={{marginTop: '38px' ,direction: 'ltr'}} 
             value={data} 
             numVisible={3} 
-            numScroll={3} 
+            numScroll={2} 
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
         />}
@@ -80,7 +80,7 @@ const Management = () =>{
                 return <Col md={4} key={index}>
                     <div className="management-card border-round p-3">
                         <div className="mb-3">
-                            <img src={item.image} alt='img' width='374' className="shadow-2" />
+                            <img src={item.image} alt='img' className="shadow-2 w-100" />
                         </div>
                         <div className='text-center text-white'>
                             <p className="card-name">{item.name}</p>
