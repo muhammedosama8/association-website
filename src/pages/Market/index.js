@@ -21,15 +21,20 @@ const Market = () => {
                     <img src={loc} alt='location' />
                     {data?.address}
                 </p>
-                <p className="phone">
-                    <img src={phone} alt='phone' />
-                    {data?.phone}
+                <p>
+                    <a href={`tel:${data.phone}`} className='phone l-hover' style={{textDecoration: 'none'}}>
+                                <img src={phone} alt='phone' width={40} />
+                                {data.phone} 
+                            </a>
+                    {/* <img src={phone} alt='phone' />
+                    {data?.phone} */}
                 </p>
-                <p className="location">
-                    <a href={data.address_link} className='location' target='_blank' style={{textDecoration: 'none'}}>
-                        <img src={map} alt='phone' width={40} style={{borderRadius: '50%'}} />
-                        اذهب إلي الموقع
-                    </a>
+                <p onClick={e=> {
+                    e.stopPropagation();
+                    window.open(data.address_link, "_blank");
+                }} className='location cursor-pointer l-hover'>
+                    <img src={map} alt='phone' width={40} style={{borderRadius: '50%'}} />
+                                اذهب إلي الموقع
                 </p>
                 <img src={data?.image} alt='market' className="img" width='100%' />
             </div>

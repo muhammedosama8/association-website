@@ -51,7 +51,9 @@ const Markets = () =>{
 
     const productTemplate = (product) => {
         return (
-            <div className='m-4 cursor-pointer' onClick={()=> navigate('/markets/market', {state: product})}>
+            <div className='m-4 cursor-pointer' onClick={()=> {
+                navigate('/markets/market', {state: product})
+            }}>
             <div className="market-card border-round p-3">
                 <div className='p-2'>
                     <div className="mb-3 text-center">
@@ -72,15 +74,18 @@ const Markets = () =>{
                             <img src={location} alt='location' />
                             {product.address}
                         </p>
-                        <p className="card-phone mb-3">
-                            <img src={phone} alt='phone' />
-                            {product.phone}
+                        <p className="mb-3">
+                            <a href={`tel:${product.phone}`} className='card-phone' style={{textDecoration: 'none'}}>
+                                <img src={phone} alt='phone' width={40} />
+                                {product.phone} 
+                            </a>
                         </p>
-                        <p >
-                            <a href={product.address_link} target='_blank' className='card-phone' style={{textDecoration: 'none'}}>
+                        <p onClick={e=> {
+                                e.stopPropagation();
+                                window.open(product.address_link, "_blank");
+                            }} className='card-phone'>
                                 <img src={map} alt='phone' width={40} style={{borderRadius: '50%'}} />
                                 اذهب إلي الموقع
-                            </a>
                         </p>
                     </div>
                 </div>

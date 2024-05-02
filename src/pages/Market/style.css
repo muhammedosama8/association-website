@@ -17,6 +17,9 @@
     color: #767676;
     font-size: 32px;
 }
+.l-hover:hover{
+    color: var(--primary);
+}
 .market .img{
     max-width: 1270px;
     max-height: 831px;
