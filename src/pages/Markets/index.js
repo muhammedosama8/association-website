@@ -80,13 +80,13 @@ const Markets = () =>{
                                 {product.phone} 
                             </a>
                         </p>
-                        <p onClick={e=> {
+                        {product?.address_link && <p onClick={e=> {
                                 e.stopPropagation();
                                 window.open(product.address_link, "_blank");
                             }} className='card-phone'>
                                 <img src={map} alt='phone' width={40} style={{borderRadius: '50%'}} />
                                 اذهب إلي الموقع
-                        </p>
+                        </p>}
                     </div>
                 </div>
             </div>

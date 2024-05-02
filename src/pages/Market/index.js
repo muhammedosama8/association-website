@@ -29,13 +29,13 @@ const Market = () => {
                     {/* <img src={phone} alt='phone' />
                     {data?.phone} */}
                 </p>
-                <p onClick={e=> {
+                {data?.address_link && <p onClick={e=> {
                     e.stopPropagation();
                     window.open(data.address_link, "_blank");
                 }} className='location cursor-pointer l-hover'>
                     <img src={map} alt='phone' width={40} style={{borderRadius: '50%'}} />
                                 اذهب إلي الموقع
-                </p>
+                </p>}
                 <img src={data?.image} alt='market' className="img" width='100%' />
             </div>
         </div>
