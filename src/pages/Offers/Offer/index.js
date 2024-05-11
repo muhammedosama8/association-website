@@ -1,41 +1,29 @@
+import { useEffect, useState } from "react";
 import { Button, Col, Modal, Row } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
 
-const Offer = ({
-  addModal,
-  setAddModal,
-  image,
-}) => {
+const Offer = () => {
+  const [pdf, setPdf] = useState('')
+  const location = useLocation()
+
+  useEffect(()=>{
+    setPdf(location?.state?.pdf)
+  },[])
+
   return (
-    <Modal
-      className="fade"
-      style={{ textAlign: "right" }}
-      show={addModal}
-      onHide={() => {
-        setAddModal();
-      }}
-    >
-        <Modal.Header>
-          <Modal.Title>
-            العرض
-          </Modal.Title>
-          <Button className="close" style={{ left: "0" }}
-            onClick={() => setAddModal()} >
-            <span>&times;</span>
-          </Button>
-        </Modal.Header>
-        <Modal.Body>
+    <div className="container" style={{marginTop: '8rem'}}>
           <Row>
-            <Col md={12}>
-                <img src={image} alt='image' className='w-100' /> 
+            <Col md={12} className='text-center'>
+                {/* <img src={image} alt='image' className='w-100' />  */}
+                <object
+                type="application/pdf"
+                data={pdf}
+                width='90%'
+                height='1000px'
+                />
             </Col>
           </Row>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={setAddModal} variant="primary light">
-            تم
-          </Button>
-        </Modal.Footer>
-    </Modal>
+          </div>
   );
 };
 

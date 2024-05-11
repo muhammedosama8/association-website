@@ -21,6 +21,7 @@ import { useDispatch } from 'react-redux';
 import SocialService from './services/SocialService';
 import { setSocial } from './store/actions/SocialActions';
 import Privacy from './pages/Privacy';
+import Offer from './pages/Offers/Offer';
 
 function App() {
   const dispatch = useDispatch()
@@ -49,6 +50,7 @@ function App() {
           <Route path="/markets" element={<AllMarkets />}  />
           <Route path="/markets/market" element={<Market />}  />
           <Route path="/offers" element={<Offers />}  />
+          <Route path="/offers/offer" element={<Offer />}  />
           <Route path="/news" element={<AllNews />}  />
           <Route path="/news/new" element={<New />}  />
           <Route path="/contact-us" element={<Contact />}  />

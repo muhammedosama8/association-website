@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Pagination from "../../common/Pagination/Pagination";
 import OfferService from "../../services/OfferService";
 import Offer from "./Offer";
@@ -26,20 +27,18 @@ const Offers = () =>{
                         <div className="new-card border-round p-3">
                             <div className='p-2'>
                                 <div className="mb-3">
-                                    <img src={prod.cover_image} alt={prod.title} height='133' className="w-100 shadow-2" />
+                                    <img src={prod.image} alt={prod.title} height='133' className="w-100 shadow-2" />
                                 </div>
                                 <div>
                                     <p className="card-title">{prod.title}</p>
                                     <div className="text-center">
-                                        <button
-                                            onClick={()=> {
-                                                setModal(true)
-                                                setImage(prod?.image)
-                                            }}
+                                        <Link
+                                            to='/offers/offer'
+                                            state={{pdf: prod.cover_image}}
                                             className="btn btn-primary"
                                         >
                                             اظهار العرض
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
