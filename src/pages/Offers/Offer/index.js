@@ -18,7 +18,7 @@ const Offer = () => {
                 <object
                 type="application/pdf"
                 data={pdf}
-                width='90%'
+                width='80%'
                 height='1000px'
                 />
             </Col>
