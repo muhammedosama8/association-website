@@ -3,14 +3,11 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Pagination from "../../common/Pagination/Pagination";
 import OfferService from "../../services/OfferService";
-import Offer from "./Offer";
 import './style.css'
 
 const Offers = () =>{
     const [data, setData] = useState([])
-    const [hasData, setHasData] = useState()
-    const [image, setImage] = useState('')
-    const [modal, setModal] = useState(false)
+    const [hasData, setHasData] = useState(null)
     const [shouldUpdate, setShouldUpdate] = useState(false)
     const [loading, setLoading] = useState(false)
     const offerService = new OfferService()
@@ -22,7 +19,7 @@ const Offers = () =>{
                     عروض الجمعية
                 </h1>
                 <Row className="mt-5">
-                    {data?.map((prod, index) => (
+                    {hasData === 1 && data?.map((prod, index) => (
                         <Col md={4} className='mb-3' key={index}>
                         <div className="new-card border-round p-3">
                             <div className='p-2'>
@@ -45,6 +42,8 @@ const Offers = () =>{
                         </div>
                         </Col>
                     ))}
+
+                    {hasData === 0 && <h1 className="mt-5 text-center">لا توجد عروض</h1>}
                 </Row>
 
                 <Pagination
@@ -56,13 +55,6 @@ const Offers = () =>{
                 />
             </div>
             </div>
-            {modal && (
-                <Offer
-                image={image}
-                addModal={modal}
-                setAddModal={() => setModal(false)}
-                />
-            )}
     </div>
 }
 export default Offers
