@@ -63,6 +63,22 @@
     font-weight: 500;
     text-decoration: none;
 }
+@media (min-width: 800px){
+    .lab-btn{
+        display: block;
+    }
+    .phone-btn{
+        display: none;
+    }
+}
+@media (max-width: 800px){
+    .lab-btn{
+        display: none;
+    }
+    .phone-btn{
+        display: block;
+    }
+}
 @media screen and (min-width: 500px) and (max-width: 800px){
     .offers{
         padding-top: 60px

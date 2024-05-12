@@ -32,10 +32,11 @@ const Offers = () =>{
                                         <Link
                                             to='/offers/offer'
                                             state={{pdf: prod.cover_image}}
-                                            className="btn btn-primary"
+                                            className="lab-btn btn btn-primary w-50 m-auto"
                                         >
                                             اظهار العرض
                                         </Link>
+                                        <a href={prod.cover_image} target='_blank' className="phone-btn btn btn-primary w-50 m-auto">اظهار العرض</a>
                                     </div>
                                 </div>
                             </div>
