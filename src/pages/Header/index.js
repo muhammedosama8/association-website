@@ -22,11 +22,13 @@ function Header() {
     <Carousel data-bs-theme="dark" controls='false' id='home'>
         {data?.map((item, index)=>{
             return <Carousel.Item key={index}>
-            <img
-              className="d-block w-100"
-              src={item?.image}
-              alt="First slide"
-            />
+            <a href={item?.url_link} target='_blank'>
+              <img
+                className="d-block w-100"
+                src={item?.image}
+                alt="First slide"
+              />
+            </a>
             <Carousel.Caption>
               <h1>{item?.title || ''}</h1>
               <p>{item?.description || ''}</p>
