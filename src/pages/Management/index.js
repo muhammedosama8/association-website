@@ -55,7 +55,7 @@ const Management = () =>{
                     </div>
                     <div className='text-center text-white'>
                         <p className="card-name">{product.name}</p>
-                        <p className="card-jop">{product.job_title}</p>
+                        <p className="card-jop">{product.job_title?.title}</p>
                     </div>
             </div>
             </div>
@@ -75,7 +75,7 @@ const Management = () =>{
             responsiveOptions={responsiveOptions} 
             itemTemplate={productTemplate}
         />}
-        {(!!data?.length && data?.length == 1) && <Row>
+        {(!!data?.length && data?.length === 1) && <Row>
             {data?.map((item, index)=>{
                 return <Col md={4} key={index}>
                     <div className="management-card border-round p-3">
@@ -84,7 +84,7 @@ const Management = () =>{
                         </div>
                         <div className='text-center text-white'>
                             <p className="card-name">{item.name}</p>
-                            <p className="card-jop">{item.job_title}</p>
+                            <p className="card-jop">{item.job_title?.title}</p>
                         </div>
                     </div>
                 </Col>
