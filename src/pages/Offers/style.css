@@ -3,7 +3,20 @@
     background-color: #FDFDFD;
     min-height: 75vh;
 }
-
+.offers .tabs{
+    display: flex;
+    gap: 16px;
+}
+.offers .tabs .tab{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 4px;
+    cursor: pointer;
+}
+.offers .tabs .tab.actice{
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+}
 .offers .title{
     text-align: center;
     font-size: 65px;

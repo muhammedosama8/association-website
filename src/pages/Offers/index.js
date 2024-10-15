@@ -6,6 +6,11 @@ import OfferService from "../../services/OfferService";
 import './style.css'
 
 const Offers = () =>{
+    const tabs = [
+        {label: 'عروض الخدمة', value: "service offers"},
+        {label: 'العروض الاجتماعية', value: "social offers"}
+    ]
+    const [selectedTab, setSelectedTab] = useState(tabs[0])
     const [data, setData] = useState([])
     const [hasData, setHasData] = useState(null)
     const [shouldUpdate, setShouldUpdate] = useState(false)
@@ -18,6 +23,20 @@ const Offers = () =>{
                 <h1 className='title'>
                     عروض الجمعية
                 </h1>
+                <div className='tabs mt-5'>
+                    {tabs?.map(tab=>{
+                        return <span 
+                            key={tab?.value}
+                            onClick={()=> {
+                                setSelectedTab(tab)
+                                setShouldUpdate(prev=> !prev)
+                            }}
+                            className={selectedTab?.value === tab?.value ? 'actice tab' : 'tab'}
+                        >
+                            {tab?.label}
+                        </span>
+                    })}
+                </div>
                 <Row className="mt-5">
                     {hasData === 1 && data?.map((prod, index) => (
                         <Col md={4} className='mb-3' key={index}>
@@ -53,6 +72,7 @@ const Offers = () =>{
                   shouldUpdate={shouldUpdate}
                   setHasData={setHasData}
                   setLoading={setLoading}
+                  type={selectedTab?.value}
                 />
             </div>
             </div>
